@@ -1,0 +1,5 @@
+scripts/auth.log
+scripts/client_secret.json
+scripts/token.json
+venv/
+data/
