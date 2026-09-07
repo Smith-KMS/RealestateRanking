@@ -1,0 +1,72 @@
+[
+  {
+    "id": "11380_202606_27_DMC롯데캐슬더퍼스트_84.93_8_130500",
+    "region_name": "은평구",
+    "lawd_cd": "11380",
+    "deal_ymd": "202606",
+    "apt_name": "DMC롯데캐슬더퍼스트",
+    "exclu_use_ar": 84.93,
+    "deal_amount": 130500,
+    "floor": 8,
+    "deal_day": 27,
+    "jibun": "417",
+    "umd_nm": "수색동",
+    "build_year": 2021
+  },
+  {
+    "id": "41135_202606_25_아름마을(건영)_133.89_6_195000",
+    "region_name": "분당구",
+    "lawd_cd": "41135",
+    "deal_ymd": "202606",
+    "apt_name": "아름마을(건영)",
+    "exclu_use_ar": 133.89,
+    "deal_amount": 195000,
+    "floor": 6,
+    "deal_day": 25,
+    "jibun": "132",
+    "umd_nm": "이매동",
+    "build_year": 1992
+  },
+  {
+    "id": "11380_202607_1_힐스테이트녹번_84.898_19_153000",
+    "region_name": "은평구",
+    "lawd_cd": "11380",
+    "deal_ymd": "202607",
+    "apt_name": "힐스테이트녹번",
+    "exclu_use_ar": 84.898,
+    "deal_amount": 153000,
+    "floor": 19,
+    "deal_day": 1,
+    "jibun": "282",
+    "umd_nm": "녹번동",
+    "build_year": 2019
+  },
+  {
+    "id": "11380_202607_4_자선메르시안(103)_72.28_6_54000",
+    "region_name": "은평구",
+    "lawd_cd": "11380",
+    "deal_ymd": "202607",
+    "apt_name": "자선메르시안(103)",
+    "exclu_use_ar": 72.28,
+    "deal_amount": 54000,
+    "floor": 6,
+    "deal_day": 4,
+    "jibun": "174-2",
+    "umd_nm": "증산동",
+    "build_year": 2003
+  },
+  {
+    "id": "11380_202607_1_힐스테이트녹번_59.938_11_70000",
+    "region_name": "은평구",
+    "lawd_cd": "11380",
+    "deal_ymd": "202607",
+    "apt_name": "힐스테이트녹번",
+    "exclu_use_ar": 59.938,
+    "deal_amount": 70000,
+    "floor": 11,
+    "deal_day": 1,
+    "jibun": "282",
+    "umd_nm": "녹번동",
+    "build_year": 2019
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "11650_202607_21_신반포자이_59.93_14_330000",
+    "region_name": "서초구",
+    "lawd_cd": "11650",
+    "deal_ymd": "202607",
+    "apt_name": "신반포자이",
+    "exclu_use_ar": 59.93,
+    "deal_amount": 330000,
+    "floor": 14,
+    "deal_day": 21,
+    "jibun": "160",
+    "umd_nm": "잠원동",
+    "build_year": 2018
+  },
+  {
+    "id": "11650_202608_14_방배그랑자이_112.961_3_385000",
+    "region_name": "서초구",
+    "lawd_cd": "11650",
+    "deal_ymd": "202608",
+    "apt_name": "방배그랑자이",
+    "exclu_use_ar": 112.961,
+    "deal_amount": 385000,
+    "floor": 3,
+    "deal_day": 14,
+    "jibun": "3283",
+    "umd_nm": "방배동",
+    "build_year": 2021
+  },
+  {
+    "id": "11650_202608_6_힐스테이트서초젠트리스_84.99_7_210000",
+    "region_name": "서초구",
+    "lawd_cd": "11650",
+    "deal_ymd": "202608",
+    "apt_name": "힐스테이트서초젠트리스",
+    "exclu_use_ar": 84.99,
+    "deal_amount": 210000,
+    "floor": 7,
+    "deal_day": 6,
+    "jibun": "557",
+    "umd_nm": "신원동",
+    "build_year": 2014
+  }
+]

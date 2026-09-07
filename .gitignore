@@ -2,4 +2,4 @@ scripts/auth.log
 scripts/client_secret.json
 scripts/token.json
 venv/
-data/
+data/daily_shorts_*

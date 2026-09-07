@@ -1,0 +1,72 @@
+[
+  {
+    "id": "11200_202607_17_삼산금호_49.45_1_65000",
+    "region_name": "성동구",
+    "lawd_cd": "11200",
+    "deal_ymd": "202607",
+    "apt_name": "삼산금호",
+    "exclu_use_ar": 49.45,
+    "deal_amount": 65000,
+    "floor": 1,
+    "deal_day": 17,
+    "jibun": "180",
+    "umd_nm": "금호동4가",
+    "build_year": 1975
+  },
+  {
+    "id": "11200_202607_25_벽산_71.33_10_148000",
+    "region_name": "성동구",
+    "lawd_cd": "11200",
+    "deal_ymd": "202607",
+    "apt_name": "벽산",
+    "exclu_use_ar": 71.33,
+    "deal_amount": 148000,
+    "floor": 10,
+    "deal_day": 25,
+    "jibun": "258",
+    "umd_nm": "하왕십리동",
+    "build_year": 1996
+  },
+  {
+    "id": "11200_202608_8_신동아_59.97_10_147000",
+    "region_name": "성동구",
+    "lawd_cd": "11200",
+    "deal_ymd": "202608",
+    "apt_name": "신동아",
+    "exclu_use_ar": 59.97,
+    "deal_amount": 147000,
+    "floor": 10,
+    "deal_day": 8,
+    "jibun": "344",
+    "umd_nm": "행당동",
+    "build_year": 1995
+  },
+  {
+    "id": "11200_202608_8_센트라스_59.94_7_208000",
+    "region_name": "성동구",
+    "lawd_cd": "11200",
+    "deal_ymd": "202608",
+    "apt_name": "센트라스",
+    "exclu_use_ar": 59.94,
+    "deal_amount": 208000,
+    "floor": 7,
+    "deal_day": 8,
+    "jibun": "1070",
+    "umd_nm": "하왕십리동",
+    "build_year": 2016
+  },
+  {
+    "id": "11200_202608_6_금호베스트빌_114.93_4_149000",
+    "region_name": "성동구",
+    "lawd_cd": "11200",
+    "deal_ymd": "202608",
+    "apt_name": "금호베스트빌",
+    "exclu_use_ar": 114.93,
+    "deal_amount": 149000,
+    "floor": 4,
+    "deal_day": 6,
+    "jibun": "1052",
+    "umd_nm": "하왕십리동",
+    "build_year": 2001
+  }
+]
