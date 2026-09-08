@@ -1,5 +1,11 @@
 scripts/auth.log
 scripts/client_secret.json
 scripts/token.json
+client_secret.json
+token.json
 venv/
 data/daily_shorts_*
+data/cron.log
+.omo/
+.venv/
+data/daily_lists/*.json

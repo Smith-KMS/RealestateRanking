@@ -3,8 +3,8 @@ import sys
 from google_auth_oauthlib.flow import InstalledAppFlow
 
 SCOPES = ['https://www.googleapis.com/auth/youtube.upload']
-secret = '/Users/smithkwon/.openclaw/workspace/dailypriceup/scripts/client_secret.json'
-token = '/Users/smithkwon/.openclaw/workspace/dailypriceup/scripts/token.json'
+secret = 'C:/Users/kwonm/workspace/RealestateRanking/scripts/client_secret.json'
+token = 'C:/Users/kwonm/workspace/RealestateRanking/scripts/token.json'
 
 # open_browser=False로 설정하여 URL만 출력하고 대기
 flow = InstalledAppFlow.from_client_secrets_file(secret, SCOPES)

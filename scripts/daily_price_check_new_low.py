@@ -8,6 +8,18 @@ import sys
 from PIL import Image, ImageDraw, ImageFont
 import subprocess
 import json
+import shutil
+
+def get_ffmpeg_path():
+    path = shutil.which("ffmpeg")
+    if path:
+        return path
+    winget_dir = "C:/Users/kwonm/AppData/Local/Microsoft/WinGet/Packages"
+    if os.path.exists(winget_dir):
+        for root, dirs, files in os.walk(winget_dir):
+            if "ffmpeg.exe" in files:
+                return os.path.join(root, "ffmpeg.exe").replace("\\", "/")
+    return "ffmpeg"
 
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -16,8 +28,8 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 api_key = "095266ca1cc9b437a6d4fab0f424668948b76a8a7981b5260d6e6ffaf48886d3"
 url = "https://apis.data.go.kr/1613000/RTMSDataSvcAptTrade/getRTMSDataSvcAptTrade"
 headers = {'User-Agent': 'Mozilla/5.0'}
-db_path = "/Users/smithkwon/.openclaw/workspace/dailypriceup/data/apt_trades.db"
-data_path = "/Users/smithkwon/.openclaw/workspace/dailypriceup/data/daily_lists"
+db_path = "C:/Users/kwonm/workspace/RealestateRanking/data/apt_trades.db"
+data_path = "C:/Users/kwonm/workspace/RealestateRanking/data/daily_lists"
 
 regions = {
     "종로구": "11110", "중구": "11140", "용산구": "11170", "성동구": "11200",
@@ -37,8 +49,10 @@ def format_price(amount):
     else: return f"{man}만"
 
 def get_font(size):
-    try: return ImageFont.truetype("/System/Library/Fonts/AppleSDGothicNeo.ttc", size)
-    except: return ImageFont.load_default()
+    for f in ["C:/Windows/Fonts/malgunbd.ttf", "C:/Windows/Fonts/malgun.ttf", "/System/Library/Fonts/AppleSDGothicNeo.ttc", "malgun.ttf"]:
+        try: return ImageFont.truetype(f, size)
+        except: pass
+    return ImageFont.load_default()
 
 def wrap_text_by_char(draw, text, font, max_width, max_lines=2):
     lines = []
@@ -306,15 +320,15 @@ def generate_ranking_image(top_data, title, out_filename):
 
 # Ranking 1: 하락률 기준 (Rate - Descending)
 ath_list_sorted_rate = sorted(ath_list, key=lambda x: x['rate'], reverse=False)
-generate_ranking_image(ath_list_sorted_rate[:10], "오늘의 신저가 하락률 TOP10", "/Users/smithkwon/.openclaw/workspace/dailypriceup/data/daily_shorts_rate_low.png")
+generate_ranking_image(ath_list_sorted_rate[:10], "오늘의 신저가 하락률 TOP10", "C:/Users/kwonm/workspace/RealestateRanking/data/daily_shorts_rate_low.png")
 
 # Ranking 2: 거래 금액 기준 (Amount - Descending)
 ath_list_sorted_highest = sorted(ath_list, key=lambda x: x['deal_amount'], reverse=True)
-generate_ranking_image(ath_list_sorted_highest[:10], "오늘의 신저가 거래금 상위 TOP10", "/Users/smithkwon/.openclaw/workspace/dailypriceup/data/daily_shorts_amount_low.png")
+generate_ranking_image(ath_list_sorted_highest[:10], "오늘의 신저가 거래금 상위 TOP10", "C:/Users/kwonm/workspace/RealestateRanking/data/daily_shorts_amount_low.png")
 
 # Ranking 3: 거래 금액 작은 순 기준 (Amount - Ascending)
 ath_list_sorted_lowest = sorted(ath_list, key=lambda x: x['deal_amount'], reverse=False)
-generate_ranking_image(ath_list_sorted_lowest[:10], "오늘의 신저가 거래금 하위 10", "/Users/smithkwon/.openclaw/workspace/dailypriceup/data/daily_shorts_lowest_low.png")
+generate_ranking_image(ath_list_sorted_lowest[:10], "오늘의 신저가 거래금 하위 10", "C:/Users/kwonm/workspace/RealestateRanking/data/daily_shorts_lowest_low.png")
 
 
 # 7. Generate Final Video
@@ -401,27 +415,27 @@ bgm_map = {
     6: "Sunday.mp3"
 }
 bgm_filename = bgm_map.get(weekday, "TechLive.mp3")
-bgm_path = f"/Users/smithkwon/.openclaw/workspace/dailypriceup/data/{bgm_filename}"
+bgm_path = f"C:/Users/kwonm/workspace/RealestateRanking/data/{bgm_filename}"
 print(f"Today is {datetime.date.today().strftime('%A')}, using BGM: {bgm_filename}")
 
 
 # 항상 오늘 전체 실거래 bottom10 추가
 new_trades_sorted = sorted(new_trades, key=lambda x: x['deal_amount'], reverse=False)
-generate_general_ranking_image(new_trades_sorted[:10], "오늘의 실거래 저가 순위 10", "/Users/smithkwon/.openclaw/workspace/dailypriceup/data/daily_shorts_bottom10.png")
+generate_general_ranking_image(new_trades_sorted[:10], "오늘의 실거래 저가 순위 10", "C:/Users/kwonm/workspace/RealestateRanking/data/daily_shorts_bottom10.png")
 
 print("Generating 16-second Shorts video (including Bottom 10)...")
 ffmpeg_cmd = [
-    "/opt/homebrew/bin/ffmpeg", "-y",
-    "-loop", "1", "-t", "4", "-i", "/Users/smithkwon/.openclaw/workspace/dailypriceup/data/daily_shorts_bottom10.png",
-    "-loop", "1", "-t", "4", "-i", "/Users/smithkwon/.openclaw/workspace/dailypriceup/data/daily_shorts_amount_low.png",
-    "-loop", "1", "-t", "4", "-i", "/Users/smithkwon/.openclaw/workspace/dailypriceup/data/daily_shorts_rate_low.png",
-    "-loop", "1", "-t", "4", "-i", "/Users/smithkwon/.openclaw/workspace/dailypriceup/data/daily_shorts_lowest_low.png",
+    get_ffmpeg_path(), "-y",
+    "-loop", "1", "-t", "4", "-i", "C:/Users/kwonm/workspace/RealestateRanking/data/daily_shorts_bottom10.png",
+    "-loop", "1", "-t", "4", "-i", "C:/Users/kwonm/workspace/RealestateRanking/data/daily_shorts_amount_low.png",
+    "-loop", "1", "-t", "4", "-i", "C:/Users/kwonm/workspace/RealestateRanking/data/daily_shorts_rate_low.png",
+    "-loop", "1", "-t", "4", "-i", "C:/Users/kwonm/workspace/RealestateRanking/data/daily_shorts_lowest_low.png",
     "-i", bgm_path,
     "-filter_complex", "[0:v][1:v][2:v][3:v]concat=n=4:v=1:a=0[v];[4:a]afade=t=out:st=14:d=2[a]",
     "-map", "[v]", "-map", "[a]",
     "-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", "30",
     "-c:a", "aac", "-b:a", "192k", "-shortest",
-    "/Users/smithkwon/.openclaw/workspace/dailypriceup/data/daily_shorts_final_low.mp4"
+    "C:/Users/kwonm/workspace/RealestateRanking/data/daily_shorts_final_low.mp4"
 ]
 
 subprocess.run(ffmpeg_cmd, capture_output=True)

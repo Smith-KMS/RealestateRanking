@@ -3,7 +3,7 @@
 # dailypriceup execution script
 # ---------------------------------------------------------------------------
 
-cd /Users/smithkwon/.openclaw/workspace/dailypriceup
+cd C:/Users/kwonm/workspace/RealestateRanking
 
 # Activate Python 3.11 virtual environment to fix Python EOL and SSL warnings
 source venv/bin/activate

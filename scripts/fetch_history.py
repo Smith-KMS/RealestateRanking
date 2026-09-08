@@ -23,7 +23,7 @@ regions = {
     "강동구": "11740", "분당구": "41135"
 }
 
-db_path = "/Users/smithkwon/.openclaw/workspace/dailypriceup/data/apt_trades.db"
+db_path = "C:/Users/kwonm/workspace/RealestateRanking/data/apt_trades.db"
 
 def init_db():
     conn = sqlite3.connect(db_path)

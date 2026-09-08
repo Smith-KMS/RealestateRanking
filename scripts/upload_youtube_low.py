@@ -9,9 +9,9 @@ from google.oauth2.credentials import Credentials
 
 # 1. 스코프 및 인증 관련 경로 설정
 SCOPES = ['https://www.googleapis.com/auth/youtube.upload']
-client_secret_file = '/Users/smithkwon/.openclaw/workspace/dailypriceup/scripts/client_secret.json'
-token_file = '/Users/smithkwon/.openclaw/workspace/dailypriceup/scripts/token.json'
-video_file = '/Users/smithkwon/.openclaw/workspace/dailypriceup/data/daily_shorts_final_low.mp4'
+client_secret_file = 'C:/Users/kwonm/workspace/RealestateRanking/scripts/client_secret.json'
+token_file = 'C:/Users/kwonm/workspace/RealestateRanking/scripts/token.json'
+video_file = 'C:/Users/kwonm/workspace/RealestateRanking/data/daily_shorts_final_low.mp4'
 
 def authenticate():
     creds = None
